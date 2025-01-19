@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import PDFMerger from 'pdf-merger-js';
+import os from 'os';
 
 async function mergePDFsInDirectory(directoryPath) {
   try {
@@ -57,7 +58,7 @@ if (args.length < 1) {
 }
 
 // Prepend the base path to the provided argument
-const basePath = "/Users/arturorugh"; // Ensure this is the base directory where your files are
+const basePath = os.homedir();
 const directoryPath = path.join(basePath, args[0]);
 
 // Call the function
